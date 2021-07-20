@@ -13,5 +13,5 @@ export const Hero = ({ title }) => (
 )
 
 Hero.defaultProps = {
-  title: 'with-chakra-ui',
+  title: 'with-chakra-ui-next',
 }

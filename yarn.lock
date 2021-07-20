@@ -748,6 +748,11 @@
   resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.2.0.tgz#f3933a44e365864f4dad5db94158106d511e8131"
   integrity sha512-sqKVVVOe5ivCaXDWivIJYVSaEgdQK9ul7a4Kity5Iw7u9+wBAPbX1RMSnLLmp7O4Vzj0WOWwMAJsTL00xwaNug==
 
+"@headlessui/react@^1.0.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-1.3.0.tgz#62287c92604923e5dfb394483e5ec2463e1baea6"
+  integrity sha512-2gqTO6BQ3Jr8vDX1B67n1gl6MGKTt6DBmR+H0qxwj0gTMnR2+Qpktj8alRWxsZBODyOiBb77QSQpE/6gG3MX4Q==
+
 "@next/env@10.2.3":
   version "10.2.3"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-10.2.3.tgz#ede3bbe68cec9939c37168ea2077f9adbc68334e"
@@ -862,6 +867,17 @@
     "@supabase/postgrest-js" "^0.29.0"
     "@supabase/realtime-js" "^1.0.9"
     "@supabase/storage-js" "^1.2.0"
+
+"@supabase/ui@^0.29.2":
+  version "0.29.2"
+  resolved "https://registry.yarnpkg.com/@supabase/ui/-/ui-0.29.2.tgz#cfe933872a30ffe68c7337516707e4c106a4c9a5"
+  integrity sha512-FdOoh1syM0AI6W+4IjoVNM3tiRV8QKHZSCa5y0931Ekn280dWTwBL6PiZacKqRJD1+zKdj8xps6ArF8YOydNsA==
+  dependencies:
+    "@headlessui/react" "^1.0.0"
+    lodash "^4.17.20"
+    prop-types "^15.7.2"
+  optionalDependencies:
+    fsevents "^2.3.2"
 
 "@types/lodash.mergewith@4.6.6":
   version "4.6.6"
@@ -1657,7 +1673,7 @@ framesync@5.3.0:
   dependencies:
     tslib "^2.1.0"
 
-fsevents@~2.3.1:
+fsevents@^2.3.2, fsevents@~2.3.1:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
   integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
@@ -2026,7 +2042,7 @@ lodash.sortby@^4.7.0:
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
   integrity sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=
 
-lodash@^4.17.13:
+lodash@^4.17.13, lodash@^4.17.20:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==

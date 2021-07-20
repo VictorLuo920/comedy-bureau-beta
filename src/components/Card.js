@@ -1,25 +1,12 @@
 import { Box, Text, Badge } from "@chakra-ui/react";
 
-const Card = ({event}) => {
+const Card = ({ event }) => {
   return (
-    <Box m={2} borderWidth="1px" w="100%">
-      <Text
-        textTransform="uppercase"
-        fontSize="lg"
-        fontWeight="bold"
-        color="red"
-      >
-        {event["EVENT_NAME"]}
-      </Text>
-      <Text textTransform="uppercase" fontSize="sm" fontWeight="bold">
-        {event["START_TIME"]}
-      </Text>
-      <Text
-        textTransform="uppercase"
-        fontSize="sm"
-        fontWeight="bold"
-        color="red"
-      >
+    <Box m={2} p={2} borderWidth="1px" w="100%">
+      <Text textStyle="eventName">{event["EVENT_NAME"]}</Text>
+      <Text textStyle="eventDesc">{event["START_TIME"]}</Text>
+      <Text textStyle="eventDesc">{event["START_DATE"]}</Text>
+      <Text textStyle="eventDesc" color="red">
         {event["VENUE"]}
       </Text>
       <Badge colorScheme="red">
