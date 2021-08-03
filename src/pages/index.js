@@ -1,54 +1,48 @@
-import {
-  Link as ChakraLink,
-  Text,
-  Code,
-  List,
-  ListIcon,
-  ListItem,
-} from '@chakra-ui/react'
-import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
-import { Hero } from '../components/Hero'
-import { Container } from '../components/Container'
-import { Main } from '../components/Main'
-import { DarkModeSwitch } from '../components/DarkModeSwitch'
-import { CTA } from '../components/CTA'
-import { Footer } from '../components/Footer'
+import Card from "../components/Card";
+import Header from "../components/Header";
+import { DarkModeSwitch } from "../components/DarkModeSwitch";
+import { VStack, Container, Button, Text } from "@chakra-ui/react";
+import { supabase } from "../utils/supabaseClient";
 
-const Index = () => (
-  <Container height="100vh">
-    <Hero />
-    <Main>
-      <Text>
-        Example repository of <Code>Next.js</Code> + <Code>chakra-ui</Code>.
-      </Text>
+export async function getStaticProps() {
+  let { data, error } = await supabase
+    .from("Open_Mics")
+    .select("*")
+    .order("START_DATE", { ascending: false });
 
-      <List spacing={3} my={0}>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          <ChakraLink
-            isExternal
-            href="https://chakra-ui.com"
-            flexGrow={1}
-            mr={2}
-          >
-            Chakra UI <LinkIcon />
-          </ChakraLink>
-        </ListItem>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          <ChakraLink isExternal href="https://nextjs.org" flexGrow={1} mr={2}>
-            Next.js <LinkIcon />
-          </ChakraLink>
-        </ListItem>
-      </List>
-    </Main>
+  return {
+    props: { data }, // will be passed to the page component as props
+  };
+}
 
-    <DarkModeSwitch />
-    <Footer>
-      <Text>Next ❤️ Chakra</Text>
-    </Footer>
-    <CTA />
-  </Container>
-)
+export default function Shows({ data }) {
+  const handleSubmit = async () => {
+    const { data, error } = await supabase
+      .from("Open_Mics")
+      .insert([
+        {
+          EVENT_NAME: "someValue",
+          RECURRENCE_RULE: "Every Saturday for four times",
+        },
+      ]);
 
-export default Index
+    console.log(data, "creating new event!");
+  };
+
+  return (
+    <>
+      <Header />
+      <Container minHeight="100vh" maxW="container.xl">
+        <Button colorScheme="red" onClick={handleSubmit}>
+          Add Event
+        </Button>
+        <VStack display="flex" m={2}>
+          {data.map((event, i) => (
+            <Card event={event} key={i} />
+          ))}
+        </VStack>
+        <DarkModeSwitch />
+      </Container>
+    </>
+  );
+}
