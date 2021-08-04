@@ -1,7 +1,9 @@
 import Card from "../components/Card";
 import Header from "../components/Header";
+import { Container } from "../components/Container";
+import { Main } from "../components/Main";
 import { DarkModeSwitch } from "../components/DarkModeSwitch";
-import { VStack, Container, Button, Text } from "@chakra-ui/react";
+import { VStack, Button, Text, Flex } from "@chakra-ui/react";
 import { supabase } from "../utils/supabaseClient";
 
 export async function getStaticProps() {
@@ -9,7 +11,8 @@ export async function getStaticProps() {
     .from("Open_Mics")
     .select("*")
     .order("START_DATE", { ascending: false });
-
+  // chaining a filter here in the future to only request this week's events? 
+  console.log(data)
   return {
     props: { data }, // will be passed to the page component as props
   };
@@ -17,30 +20,30 @@ export async function getStaticProps() {
 
 export default function Shows({ data }) {
   const handleSubmit = async () => {
-    const { data, error } = await supabase
-      .from("Open_Mics")
-      .insert([
-        {
-          EVENT_NAME: "someValue",
-          RECURRENCE_RULE: "Every Saturday for four times",
-        },
-      ]);
+    const { data, error } = await supabase.from("Open_Mics").insert([
+      {
+        EVENT_NAME: "someValue",
+        RECURRENCE_RULE: "Every Saturday for four times",
+      },
+    ]);
 
     console.log(data, "creating new event!");
   };
 
   return (
     <>
-      <Header />
-      <Container minHeight="100vh" maxW="container.xl">
+      <Container minHeight="100vh">
+        <Header />
         <Button colorScheme="red" onClick={handleSubmit}>
           Add Event
         </Button>
-        <VStack display="flex" m={2}>
-          {data.map((event, i) => (
-            <Card event={event} key={i} />
-          ))}
-        </VStack>
+        <Main>
+          <Flex direction="column">
+            {data.map((event, i) => (
+              <Card event={event} key={i} />
+            ))}
+          </Flex>
+        </Main>
         <DarkModeSwitch />
       </Container>
     </>
