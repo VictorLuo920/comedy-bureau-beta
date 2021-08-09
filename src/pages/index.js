@@ -1,9 +1,11 @@
+import Link from "next/link";
+
 import Card from "../components/Card";
 import Header from "../components/Header";
 import { Container } from "../components/Container";
 import { Main } from "../components/Main";
 import { DarkModeSwitch } from "../components/DarkModeSwitch";
-import { VStack, Button, Text, Flex } from "@chakra-ui/react";
+import { VStack, Button, Text, Flex, Link as ChakraLink } from "@chakra-ui/react";
 import { supabase } from "../utils/supabaseClient";
 
 export async function getStaticProps() {
@@ -12,7 +14,6 @@ export async function getStaticProps() {
     .select("*")
     .order("START_DATE", { ascending: false });
   // chaining a filter here in the future to only request this week's events?
-  console.log(data)
   return {
     props: { data }, // will be passed to the page component as props
   };
