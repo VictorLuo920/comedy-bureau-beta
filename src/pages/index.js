@@ -11,7 +11,7 @@ export async function getStaticProps() {
     .from("Open_Mics")
     .select("*")
     .order("START_DATE", { ascending: false });
-  // chaining a filter here in the future to only request this week's events? 
+  // chaining a filter here in the future to only request this week's events?
   console.log(data)
   return {
     props: { data }, // will be passed to the page component as props
@@ -30,6 +30,7 @@ export default function Shows({ data }) {
     console.log(data, "creating new event!");
   };
 
+
   return (
     <>
       <Container minHeight="100vh">
@@ -40,7 +41,7 @@ export default function Shows({ data }) {
         <Main>
           <Flex direction="column">
             {data.map((event, i) => (
-              <Card event={event} key={i} />
+              <Card event={event} key={event['Primary-Key']} />
             ))}
           </Flex>
         </Main>
