@@ -5,7 +5,7 @@ const Card = ({ event }) => {
   return (
     <Box m={2} p={2} borderWidth="1px">
       <Link href={`/${event["Primary-Key"]}`}>
-        <ChakraLink href>
+        <ChakraLink>
           <Text textStyle="eventName" borderBottomWidth="1px">
             {event["EVENT_NAME"]}
           </Text>
