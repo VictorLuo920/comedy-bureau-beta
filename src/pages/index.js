@@ -24,7 +24,8 @@ export async function getStaticProps() {
   let { data, error } = await supabase
     .from("Open_Mics")
     .select("*")
-    .order("START_DATE", { ascending: false }).limit(20);
+    .order("START_DATE", { ascending: false })
+    .limit(20);
   // chaining a filter here in the future to only request this week's events?
   return {
     props: { data }, // will be passed to the page component as props
@@ -53,10 +54,19 @@ export default function Shows({ data }) {
         <Box w="100%" px="2rem">
           <Heading>Find the Funny.</Heading>
           <Text>Discover your next comedy event</Text>
-          <InputGroup>
-            <Input borderRadius="0px" placeholder="Category" />
-            <Input borderRadius="0px" placeholder="Date" />
-            <Input borderRadius="0px" placeholder="Location" />
+          <InputGroup w="100%">
+            <Flex w="100%" direction="column">
+              <FormLabel px="1rem">Category</FormLabel>
+              <Input borderRadius="0px" placeholder="Category" />
+            </Flex>
+            <Flex w="100%" direction="column">
+              <FormLabel px="1rem">Date</FormLabel>
+              <Input borderRadius="0px" placeholder="Date" />
+            </Flex>
+            <Flex w="100%" direction="column">
+              <FormLabel px="1rem">Location</FormLabel>
+              <Input borderRadius="0px" placeholder="Location" />
+            </Flex>
           </InputGroup>
 
           {/* how do I try to get these styled to a hero component? put the image in background of this....  */}
