@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { getAllEventIds, getEventData } from "../lib/events";
+import { getAllEventIds, getEventData } from "../../lib/events";
 
 import { Box, Text, Badge, Link as ChakraLink } from "@chakra-ui/react";
-import { Container } from "../components/Container";
-import { Main } from "../components/Main";
+import { Container } from "../../components/Container";
+import { Main } from "../../components/Main";
 
 export default function Event({ event }) {
   return (
