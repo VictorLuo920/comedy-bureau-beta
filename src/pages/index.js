@@ -54,7 +54,7 @@ export default function Shows({ data }) {
         <Box w="100%" px="2rem">
           <Heading>Find the Funny.</Heading>
           <Text>Discover your next comedy event</Text>
-          <InputGroup w="100%">
+          <InputGroup w="100%" my={1}>
             <Flex w="100%" direction="column">
               <FormLabel px="1rem">Category</FormLabel>
               <Input borderRadius="0px" placeholder="Category" />
