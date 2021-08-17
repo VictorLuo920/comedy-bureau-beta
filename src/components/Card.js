@@ -4,7 +4,7 @@ import { Box, Text, Badge, Link as ChakraLink } from "@chakra-ui/react";
 const Card = ({ event }) => {
   return (
     <Box m={2} p={2} borderWidth="1px">
-      <Link href={`/${event["Primary-Key"]}`}>
+      <Link href={`/shows/${event["Primary-Key"]}`}>
         <ChakraLink>
           <Text textStyle="eventName" borderBottomWidth="1px">
             {event["EVENT_NAME"]}
