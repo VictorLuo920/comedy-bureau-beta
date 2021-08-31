@@ -3,6 +3,8 @@ import { Flex, Box, Text, Link as ChakraLink } from '@chakra-ui/react';
 import Link from "next/link";
 import Image from "next/image";
 
+//make this easy; mobile responsive from the figma design, floats on top? 
+
 const MenuItem = ({ children, isLast, to = '/' }) => {
   return (
     <Text
