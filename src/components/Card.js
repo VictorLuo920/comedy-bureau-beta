@@ -5,7 +5,7 @@ import { Box, Text, Badge, Link as ChakraLink } from "@chakra-ui/react";
 //The Card component needs to follow a basic 3/4 ratio of an image box... with teh floaty text image. 
 const Card = ({ event }) => {
   return (
-    <Box m={2} p={2} borderWidth="1px">
+    <Box m={2} p={2} borderWidth="1px" bgImage="url(/jake.png)">
       <Link href={`/shows/${event["Primary-Key"]}`}>
         <ChakraLink>
           <Text textStyle="eventName" borderBottomWidth="1px">
