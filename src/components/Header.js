@@ -31,7 +31,7 @@ const Header = (props) => {
       w="100%"
     >
       <Box>
-        <Image src="/jake.png" height="64px" width="64px" alt="Logo" />
+        <Image src="/logo.png" height="64px" width="64px" alt="Logo" />
       </Box>
 
       <Box display={{ base: 'block', md: 'none' }} onClick={toggleMenu}>
