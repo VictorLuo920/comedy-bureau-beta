@@ -27,7 +27,7 @@ export const Hero = () => (
         <Input borderRadius="0px" placeholder="Location" />
       </Flex>
     </InputGroup>
-    <Image src="/jake.png" width="64px" height="64px" />
+    <Image src="/jake.png" width="64px" height="64px" alt="jake" />
     {/* how do I try to get these styled to a hero component? put the image in background of this....  */}
   </Box>
 );
