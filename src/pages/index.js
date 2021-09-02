@@ -1,7 +1,7 @@
 import Card from "../components/Card";
 import Header from "../components/Header";
-import Container from "../components/Container";
-import Main from "../components/Main";
+import { Container } from "../components/Container";
+import { Main } from "../components/Main";
 import Hero from "../components/Hero";
 import DarkModeSwitch from "../components/DarkModeSwitch";
 import { Flex } from "@chakra-ui/react";
