@@ -8,35 +8,47 @@ import {
   Link as ChakraLink,
   AspectRatio,
   SlideFade,
+  useDisclosure,
 } from "@chakra-ui/react";
 
 //The Card component needs to follow a basic 3/4 ratio of an image box... with teh floaty text image.
 const Card = ({ event }) => {
+  const { isOpen, onToggle } = useDisclosure();
+
   return (
-    <Box m={2} p={2} borderWidth="1px">
-      <AspectRatio pos="relative" maxW="120px" ratio={3 / 4}>
-        <Image src="/jake.png" objectFit="cover" layout="fill"/>
+    <Box
+      m={2}
+      p={2}
+      borderWidth="1px"
+      pos="relative"
+      onMouseEnter={onToggle}
+      onMouseLeave={onToggle}
+      maxW="240px"
+    >
+      <AspectRatio maxW="120px" ratio={3 / 4}>
+        <Image src="/jake.png" objectFit="cover" layout="fill" />
       </AspectRatio>
+      <SlideFade in={isOpen} offsetY="20px">
+        <Link href={`/shows/${event["Primary-Key"]}`}>
+          <ChakraLink>
+            <Text textStyle="eventName" borderBottomWidth="1px">
+              {event["EVENT_NAME"]}
+            </Text>
+          </ChakraLink>
+        </Link>
 
-      <Link href={`/shows/${event["Primary-Key"]}`}>
-        <ChakraLink>
-          <Text textStyle="eventName" borderBottomWidth="1px">
-            {event["EVENT_NAME"]}
-          </Text>
-        </ChakraLink>
-      </Link>
-
-      <Text textStyle="eventDesc">
-        {event["START_DATE"]} @ {event["START_TIME"]}
-      </Text>
-      <Text textStyle="eventDesc" color="red">
-        {event["VENUE"]}
-      </Text>
-      <Badge colorScheme="red">
-        {event["EVENT_COST_MICS"] && event["EVENT_COST_MICS"] !== "$0"
-          ? event["EVENT_COST_MICS"]
-          : "Free"}
-      </Badge>
+        <Text textStyle="eventDesc">
+          {event["START_DATE"]} @ {event["START_TIME"]}
+        </Text>
+        <Text textStyle="eventDesc" color="red">
+          {event["VENUE"]}
+        </Text>
+        <Badge colorScheme="red">
+          {event["EVENT_COST_MICS"] && event["EVENT_COST_MICS"] !== "$0"
+            ? event["EVENT_COST_MICS"]
+            : "Free"}
+        </Badge>
+      </SlideFade>
     </Box>
   );
 };
