@@ -32,4 +32,3 @@ export const Hero = () => (
   </Box>
 );
 
-export default Hero;

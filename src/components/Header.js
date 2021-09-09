@@ -1,7 +1,9 @@
-import { useState } from 'react';
-import { Flex, Box, Text, Link as ChakraLink } from '@chakra-ui/react';
 import Link from "next/link";
 import Image from "next/image";
+
+import { useState } from 'react';
+import { Flex, Box, Text, Link as ChakraLink } from '@chakra-ui/react';
+
 
 //make this easy; mobile responsive from the figma design, floats on top? 
 
@@ -17,7 +19,7 @@ const MenuItem = ({ children, isLast, to = '/' }) => {
   );
 };
 
-const Header = (props) => {
+export const Header = (props) => {
   const [show, setShow] = useState(false);
   const toggleMenu = () => setShow(!show);
   return (
@@ -63,4 +65,4 @@ const Header = (props) => {
   );
 };
 
-export default Header;
+Header;

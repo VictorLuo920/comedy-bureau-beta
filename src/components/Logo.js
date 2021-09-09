@@ -1,5 +1,4 @@
 import { chakra, useColorModeValue, useToken } from '@chakra-ui/react'
-import * as React from 'react'
 
 export const Logo = (props) => {
   const [white, black] = useToken('colors', ['white', 'gray.800'])

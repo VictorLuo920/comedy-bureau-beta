@@ -1,10 +1,10 @@
-import Card from "../components/Card";
-import Header from "../components/Header";
+import { Card } from "../components/Card";
+import { Header } from "../components/Header";
 import { Container } from "../components/Container";
 import { Main } from "../components/Main";
-import { Footer } from "../components/Footer"
-import Hero from "../components/Hero";
-import DarkModeSwitch from "../components/DarkModeSwitch";
+import { Footer } from "../components/Footer";
+import { Hero } from "../components/Hero";
+import { DarkModeSwitch } from "../components/DarkModeSwitch";
 import { Flex } from "@chakra-ui/react";
 import { supabase } from "../utils/supabaseClient";
 

@@ -1,5 +1,4 @@
 import { Box, Link, SimpleGrid, Stack } from '@chakra-ui/react'
-import * as React from 'react'
 import { FooterHeading } from './FooterHeading'
 
 export const LinkGrid = (props) => (

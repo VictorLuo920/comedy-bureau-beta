@@ -1,5 +1,4 @@
 import { Button, chakra, Input, Stack, Text, useColorModeValue } from '@chakra-ui/react'
-import * as React from 'react'
 import { FooterHeading } from './FooterHeading'
 
 export const SubscribeForm = (props) => {

@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 
 //The Card component needs to follow a basic 3/4 ratio of an image box... with teh floaty text image.
-const Card = ({ event }) => {
+export const Card = ({ event }) => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -55,4 +55,3 @@ const Card = ({ event }) => {
   );
 };
 
-export default Card;
