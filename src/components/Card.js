@@ -24,6 +24,9 @@ const Card = ({ event }) => {
       onMouseEnter={onToggle}
       onMouseLeave={onToggle}
       maxW="240px"
+      backgroundImage="url('/logo.png')"
+      backgroundPosition="center"
+      backgroundRepeat="no-repeat"
     >
       <AspectRatio maxW="120px" ratio={3 / 4}>
         <Image src="/jake.png" objectFit="cover" layout="fill" />
