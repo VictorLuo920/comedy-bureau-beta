@@ -2,6 +2,7 @@ import Card from "../components/Card";
 import Header from "../components/Header";
 import { Container } from "../components/Container";
 import { Main } from "../components/Main";
+import { Footer } from "../components/Footer"
 import Hero from "../components/Hero";
 import DarkModeSwitch from "../components/DarkModeSwitch";
 import { Flex } from "@chakra-ui/react";
@@ -29,13 +30,14 @@ export default function Shows({ data }) {
         <Hero />
 
         <Main>
-          <Flex direction="column">
+          <Flex direction="row" wrap="wrap">
             {data.map((event, i) => (
               <Card event={event} key={event["Primary-Key"]} />
             ))}
           </Flex>
         </Main>
         <DarkModeSwitch />
+        <Footer />
       </Container>
     </>
   );
