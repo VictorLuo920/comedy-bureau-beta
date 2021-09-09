@@ -1,11 +1,23 @@
 import Link from "next/link";
-import { Box, Text, Badge, Link as ChakraLink } from "@chakra-ui/react";
+import Image from "next/image";
 
+import {
+  Box,
+  Text,
+  Badge,
+  Link as ChakraLink,
+  AspectRatio,
+  SlideFade,
+} from "@chakra-ui/react";
 
-//The Card component needs to follow a basic 3/4 ratio of an image box... with teh floaty text image. 
+//The Card component needs to follow a basic 3/4 ratio of an image box... with teh floaty text image.
 const Card = ({ event }) => {
   return (
     <Box m={2} p={2} borderWidth="1px">
+      <AspectRatio pos="relative" maxW="120px" ratio={3 / 4}>
+        <Image src="/jake.png" objectFit="cover" layout="fill"/>
+      </AspectRatio>
+
       <Link href={`/shows/${event["Primary-Key"]}`}>
         <ChakraLink>
           <Text textStyle="eventName" borderBottomWidth="1px">
