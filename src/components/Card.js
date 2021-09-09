@@ -23,14 +23,12 @@ const Card = ({ event }) => {
       pos="relative"
       onMouseEnter={onToggle}
       onMouseLeave={onToggle}
-      maxW="240px"
       backgroundImage="url('/logo.png')"
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
+      backgroundSize="contain"
     >
-      <AspectRatio maxW="120px" ratio={3 / 4}>
-        <Image src="/jake.png" objectFit="cover" layout="fill" />
-      </AspectRatio>
+     
       <SlideFade in={isOpen} offsetY="20px">
         <Link href={`/shows/${event["Primary-Key"]}`}>
           <ChakraLink>
