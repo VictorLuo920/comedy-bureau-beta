@@ -1,4 +1,5 @@
 import { Box, Stack, StackDivider } from "@chakra-ui/react";
+import Image from "next/image";
 import { Copyright } from "./Copyright";
 import { LinkGrid } from "./LinkGrid";
 import { Logo } from "./Logo";
@@ -14,6 +15,7 @@ export const Footer = (props) => {
       role="contentinfo"
       mx="auto"
       maxW="7xl"
+      w="100%"
       py="12"
       px={{
         base: "4",
@@ -32,7 +34,7 @@ export const Footer = (props) => {
           }}
         >
           <Box flex="1">
-            <Logo />
+            <Image src="/logo.png" height="64px" width="64px" alt="Logo" />
           </Box>
           <Stack
             direction={{
@@ -75,5 +77,3 @@ export const Footer = (props) => {
     </Box>
   );
 };
-
-

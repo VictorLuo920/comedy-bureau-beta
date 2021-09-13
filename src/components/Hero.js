@@ -17,6 +17,7 @@ export const Hero = () => (
       <Flex w="100%" direction="column">
         <FormLabel px="1rem">Category</FormLabel>
         <Input borderRadius="0px" placeholder="Category" />
+        {/* category here: this search bar needs to fire a function that returns data based on corresponding tags in organization... */}
       </Flex>
       <Flex w="100%" direction="column">
         <FormLabel px="1rem">Date</FormLabel>
@@ -25,6 +26,7 @@ export const Hero = () => (
       <Flex w="100%" direction="column">
         <FormLabel px="1rem">Location</FormLabel>
         <Input borderRadius="0px" placeholder="Location" />
+        {/* This corresponds to a Location field, and should refer to its own table? */}
       </Flex>
     </InputGroup>
     <Image src="/jake.png" width="64px" height="64px" />
