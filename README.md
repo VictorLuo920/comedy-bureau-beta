@@ -1,6 +1,6 @@
 # The Comedy Bureau Beta App [chakra-ui](https://github.com/chakra-ui/chakra-ui)
 
-Creating The Comedy Bureau's latest iteration, MVP relaunch. 
+Creating The Comedy Bureau's latest iteration, MVP relaunch. [Deployed Version](https://comedy-bureau-beta.vercel.app/)
 
 ## Technologies Used:
 * [Chakra-UI](https://chakra-ui.com/docs/features/style-props) - Component Library based on Style Props
