@@ -1,4 +1,4 @@
-# The Comedy Bureau Beta App [chakra-ui](https://github.com/chakra-ui/chakra-ui)
+# The Comedy Bureau Beta App
 
 Creating The Comedy Bureau's latest iteration, MVP relaunch. [Deployed Version](https://comedy-bureau-beta.vercel.app/)
 
@@ -12,12 +12,15 @@ Connected Next.js `_app.js` with `chakra-ui`'s Theme and ColorMode containers so
 ## WireFrames and References: 
 * [High-Fidelity WireFrames on Figma](https://www.figma.com/file/CeYfhMvJkWWO0BEqYtmUrx/High-Fidelity-Wireframes-for-TCB?node-id=31%3A14489)
 * [Notion Board - Created by Estie Choi](https://www.notion.so/The-Comedy-Bureau-4-0-5871ca84430b43c9adf7e8a3d9f9b23f)
+* [Trello Board](https://trello.com/b/Ls0zDUmc/comedy-bureau-mvp-redesign)
 ## How to use
 
 ```bash
-yarn install
+yarn add
 yarn run dev
 ```
+See your changes reload on localhost:3000
+
 ## Deploy your own
 
 Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
