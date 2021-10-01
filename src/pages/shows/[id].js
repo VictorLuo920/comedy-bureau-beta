@@ -25,7 +25,7 @@ export default function Event({ event }) {
               ? event["EVENT_COST_MICS"]
               : "Free"}
           </Badge>
-          <Text textStyle="eventDesc">{event["EVENT_DESCRIPTION"]}</Text>
+          <Text whiteSpace="pre-wrap" textStyle="eventDesc">{event["EVENT_DESCRIPTION"]}</Text>
         </Box>
       </Main>
     </Container>

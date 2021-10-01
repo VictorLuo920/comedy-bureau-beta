@@ -22,7 +22,6 @@ export async function getStaticProps() {
 
 export default function Shows({ data }) {
   // data here can be filtered when it is received from props... filter according to date-fns, isMonday? to sort by weekdays... and for the "featured" I would just have to filter by a different field like "featured=true" now... of some other category I talk about with Jake...  two main filtes are by time (which handles by date-fns) and by arbitrary tags to track in
-
   return (
     <>
       <Container minHeight="100vh">
