@@ -1,4 +1,5 @@
 import { Card } from "../components/Card";
+import { EventListing } from "../components/EventListing";
 import { Header } from "../components/Header";
 import { Container } from "../components/Container";
 import { Main } from "../components/Main";
@@ -27,11 +28,10 @@ export default function Shows({ data }) {
       <Container minHeight="100vh">
         <Header />
         <Hero />
-
         <Main>
           <SimpleGrid columns={4} spacing={5}>
             {data.map((event, i) => (
-              <Card event={event} key={event["Primary-Key"]} />
+              <EventListing event={event} key={event["Primary-Key"]} />
             ))}
           </SimpleGrid>
           <Flex direction="row" wrap="wrap"></Flex>

@@ -9,7 +9,7 @@ export default function Event({ event }) {
   return (
     <Container minHeight="100vh">
       <Main>
-        <Box m={2} p={2} borderWidth="1px">
+        <Box m={2} p={8} borderWidth="1px">
           <Text textStyle="eventName" borderBottomWidth="1px">
             {event["EVENT_NAME"]}
           </Text>
