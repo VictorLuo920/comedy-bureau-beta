@@ -50,15 +50,9 @@ export const Header = (props) => {
           direction={['column', 'row', 'row', 'row']}
           pt={[4, 4, 0, 0]}
         >
-          <MenuItem to="/">Open Mic List</MenuItem>
+          <MenuItem to="/">Open Mics</MenuItem>
           <MenuItem to="/podcasts">Comedy Shows</MenuItem>
-          <MenuItem to="/playlists">Book a Tour</MenuItem>
           <MenuItem to="/playlists">Venues</MenuItem>
-          <MenuItem to="/playlists">News</MenuItem>
-          <MenuItem to="/playlists">Podcast</MenuItem>
-          <MenuItem to="/profile" isLast>
-            Profile
-          </MenuItem>
         </Flex>
       </Box>
     </Flex>
