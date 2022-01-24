@@ -1,6 +1,12 @@
-import { ChakraProvider, ColorModeProvider } from '@chakra-ui/react'
+import { ChakraProvider, ColorModeProvider } from "@chakra-ui/react";
 
-import theme from '../theme'
+import theme from "../theme";
+import { Header } from "../components/Header";
+import { Container } from "../components/Container";
+import { Main } from "../components/Main";
+import { Footer } from "../components/Footer";
+import { DarkModeSwitch } from "../components/DarkModeSwitch";
+
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -10,10 +16,15 @@ function MyApp({ Component, pageProps }) {
           useSystemColorMode: true,
         }}
       >
-        <Component {...pageProps} />
+        <Container minHeight="100vh">
+          <Header />
+          <Main><Component {...pageProps} /></Main>
+          <Footer />
+          <DarkModeSwitch />
+        </Container>
       </ColorModeProvider>
     </ChakraProvider>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;
