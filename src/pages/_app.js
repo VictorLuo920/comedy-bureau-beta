@@ -7,7 +7,6 @@ import { Main } from "../components/Main";
 import { Footer } from "../components/Footer";
 import { DarkModeSwitch } from "../components/DarkModeSwitch";
 
-
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider resetCSS theme={theme}>
@@ -16,9 +15,11 @@ function MyApp({ Component, pageProps }) {
           useSystemColorMode: true,
         }}
       >
-        <Container minHeight="100vh">
+        <Container minHeight="100vh" p={4}>
           <Header />
-          <Main><Component {...pageProps} /></Main>
+          <Main>
+            <Component {...pageProps} />
+          </Main>
           <Footer />
           <DarkModeSwitch />
         </Container>

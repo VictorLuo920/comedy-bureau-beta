@@ -1,12 +1,7 @@
 import { Card } from "../components/Card";
 import { EventListing } from "../components/EventListing";
-import { Header } from "../components/Header";
-import { Container } from "../components/Container";
-import { Main } from "../components/Main";
-import { Footer } from "../components/Footer";
 import { Hero } from "../components/Hero";
-import { DarkModeSwitch } from "../components/DarkModeSwitch";
-import { Flex, SimpleGrid } from "@chakra-ui/react";
+import { SimpleGrid } from "@chakra-ui/react";
 import { supabase } from "../utils/supabaseClient";
 
 export async function getStaticProps() {
@@ -30,13 +25,11 @@ export default function Shows({ data }) {
   return (
     <>
       <Hero />
-
       <SimpleGrid columns={4} spacing={5}>
         {data.map((event, i) => (
           <EventListing event={event} key={event["Primary-Key"]} />
         ))}
       </SimpleGrid>
-
     </>
   );
 }
