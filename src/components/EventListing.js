@@ -1,7 +1,7 @@
 import { format } from "date-fns";
 import Link from "next/link";
 
-import { Box, Text, Flex, Badge, Link as ChakraLink } from "@chakra-ui/react";
+import { Text, Flex, Link as ChakraLink } from "@chakra-ui/react";
 
 export const EventListing = ({ event }) => {
   let month = format(new Date(event["START_DATE"]), "MMM");

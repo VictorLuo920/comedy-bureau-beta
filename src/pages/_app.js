@@ -1,11 +1,10 @@
 import { ChakraProvider, ColorModeProvider } from "@chakra-ui/react";
-
-import theme from "../theme";
-import { Header } from "../components/Header";
 import { Container } from "../components/Container";
 import { Main } from "../components/Main";
-import { Footer } from "../components/Footer";
 import { DarkModeSwitch } from "../components/DarkModeSwitch";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
+import theme from "../theme";
 
 function MyApp({ Component, pageProps }) {
   return (

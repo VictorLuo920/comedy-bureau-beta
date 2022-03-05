@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { getAllEventIds, getEventData } from "../../lib/events";
-
 import { Box, Text, Badge, Link as ChakraLink } from "@chakra-ui/react";
 
 
