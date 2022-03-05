@@ -9,7 +9,7 @@ export const EventListing = ({ event }) => {
 
   return (
     <Flex m={2} p={2} borderWidth="1px">
-      <Flex direction="column">
+      <Flex direction="column" p={2}>
         <Text>{month}</Text>
         <Text>{date}</Text>
       </Flex>

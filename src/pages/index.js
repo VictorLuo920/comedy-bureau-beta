@@ -7,7 +7,7 @@ export async function getStaticProps() {
   let { data, error } = await supabase
     .from("Open_Mics")
     .select("*")
-    .order("START_DATE", { ascending: false })
+    .order("START_DATE", { ascending: true })
     .limit(20);
 
   return {
@@ -19,7 +19,7 @@ export default function Shows({ data }) {
   return (
     <>
       <Hero />
-      <SimpleGrid columns={4} spacing={5}>
+      <SimpleGrid columns={{sm: 1, lg: 4}} spacing={5}>
         {data.map((event, i) => (
           <EventListing event={event} key={event["Primary-Key"]} />
         ))}
