@@ -21,7 +21,7 @@ export default function Shows({ data }) {
       <Hero />
       <SimpleGrid columns={{sm: 1, lg: 4}} spacing={5}>
         {data.map((event, i) => (
-          <EventListing event={event} key={event["Primary-Key"]} />
+          <EventListing event={event} key={event["id"]} />
         ))}
       </SimpleGrid>
     </>

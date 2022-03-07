@@ -15,7 +15,7 @@ export const EventListing = ({ event }) => {
       </Flex>
 
       <Flex direction="column">
-        <Link href={`/shows/${event["Primary-Key"]}`}>
+        <Link href={`/shows/${event["id"]}`}>
           <ChakraLink>
             <Text textStyle="eventName" borderBottomWidth="1px" pb={1}>
               {event["EVENT_NAME"]}

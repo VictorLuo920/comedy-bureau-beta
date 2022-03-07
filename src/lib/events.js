@@ -1,10 +1,10 @@
 import { supabase } from "../utils/supabaseClient";
 
 export async function getAllEventIds() {
-  let { data, error } = await supabase.from("Open_Mics").select("Primary-Key");
+  let { data, error } = await supabase.from("Open_Mics").select("id");
 
   let paths = data.map((eventId) => {
-    let id = JSON.stringify(eventId["Primary-Key"]);
+    let id = JSON.stringify(eventId["id"]);
     return { params: { id } };
   });
   
@@ -15,7 +15,7 @@ export async function getEventData(id) {
   let { data, error } = await supabase
     .from("Open_Mics")
     .select("*")
-    .eq("Primary-Key", id)
+    .eq("id", id)
     .single();
 
   return data;
