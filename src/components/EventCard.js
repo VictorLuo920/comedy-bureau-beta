@@ -3,9 +3,9 @@ import Link from "next/link";
 
 import { Text, Flex, Link as ChakraLink } from "@chakra-ui/react";
 
-export const EventListing = ({ event }) => {
-  let month = format(new Date(event["START_DATE"]), "MMM");
-  let date = format(new Date(event["START_DATE"]), "d");
+export const EventCard = ({ event }) => {
+  let month = format(new Date(event["start_date"]), "MMM");
+  let date = format(new Date(event["start_date"]), "d");
 
   return (
     <Flex m={2} p={2} borderWidth="1px">
@@ -18,19 +18,20 @@ export const EventListing = ({ event }) => {
         <Link href={`/shows/${event["id"]}`}>
           <ChakraLink>
             <Text textStyle="eventName" borderBottomWidth="1px" pb={1}>
-              {event["EVENT_NAME"]}
+              {event["name"]}
             </Text>
           </ChakraLink>
         </Link>
 
         <Text textStyle="eventDesc">
-          {event["START_TIME"]} - {event["END_TIME"]}
+          {event["start_time"]} - {event["end_time"]}
         </Text>
 
         <Text textStyle="eventDesc" color="red">
-          {event["VENUE"]}
+          {event["venue"]}
         </Text>
       </Flex>
     </Flex>
   );
 };
+

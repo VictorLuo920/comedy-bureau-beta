@@ -7,22 +7,22 @@ export default function Event({ event }) {
   return (
     <Box m={2} p={8} borderWidth="1px" minWidth="100%">
       <Text textStyle="eventName" borderBottomWidth="1px">
-        {event["EVENT_NAME"]}
+        {event["name"]}
       </Text>
 
       <Text textStyle="eventDesc">
-        {event["START_DATE"]} @ {event["START_TIME"]}
+        {event["start_date"]} @ {event["start_time"]}
       </Text>
       <Text textStyle="eventDesc" color="red">
-        {event["VENUE"]}
+        {event["venue"]}
       </Text>
       <Badge colorScheme="red">
-        {event["EVENT_COST_MICS"] && event["EVENT_COST_MICS"] !== "$0"
-          ? event["EVENT_COST_MICS"]
+        {event["cost"] && event["cost"] > 0
+          ? event["cost"]
           : "Free"}
       </Badge>
       <Text whiteSpace="pre-wrap" textStyle="eventDesc">
-        {event["EVENT_DESCRIPTION"]}
+        {event["description"]}
       </Text>
       <Link href='/'>Home</Link>
     </Box>
