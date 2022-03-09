@@ -1,12 +1,18 @@
-import { format, parse } from "date-fns";
+import { format } from "date-fns";
+import { getAMPMTime } from "../utils/dateTimeUtil"
 import Link from "next/link";
 
 import { Text, Flex, Link as ChakraLink } from "@chakra-ui/react";
 
 export const EventCard = ({ event }) => {
-  let month = format(new Date(event["start_date"].replace(/-/g, '\/').replace(/T.+/, '')), "MMM");
-  let date = format(new Date(event["start_date"].replace(/-/g, '\/').replace(/T.+/, '')), "d");
- 
+  let formattedDateTime = new Date(event["start_date"] + "T" + event["start_time"] + "Z")
+  let endDateTime = new Date(event["start_date"] + "T" + event["end_time"] + "Z")
+
+  let month = format(formattedDateTime, "MMM");
+  let date = format(formattedDateTime, "d");
+  let startTime = getAMPMTime(formattedDateTime)
+  let endTime = getAMPMTime(endDateTime)
+
   return (
     <Flex m={2} p={2} borderWidth="1px">
       <Flex direction="column" p={2}>
@@ -24,7 +30,7 @@ export const EventCard = ({ event }) => {
         </Link>
 
         <Text textStyle="eventDesc">
-          {event["start_time"]} - {event["end_time"]}
+          {startTime} - {endTime}
         </Text>
 
         <Text textStyle="eventDesc" color="red">
