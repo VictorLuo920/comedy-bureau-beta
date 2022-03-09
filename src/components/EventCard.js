@@ -1,12 +1,12 @@
-import { format } from "date-fns";
+import { format, parse } from "date-fns";
 import Link from "next/link";
 
 import { Text, Flex, Link as ChakraLink } from "@chakra-ui/react";
 
 export const EventCard = ({ event }) => {
-  let month = format(new Date(event["start_date"]), "MMM");
-  let date = format(new Date(event["start_date"]), "d");
-
+  let month = format(new Date(event["start_date"].replace(/-/g, '\/').replace(/T.+/, '')), "MMM");
+  let date = format(new Date(event["start_date"].replace(/-/g, '\/').replace(/T.+/, '')), "d");
+ 
   return (
     <Flex m={2} p={2} borderWidth="1px">
       <Flex direction="column" p={2}>
