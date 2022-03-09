@@ -1,16 +1,16 @@
 import { format } from "date-fns";
-import { getAMPMTime } from "../utils/dateTimeUtil"
+import { getAMPMTime, getUTCTimeString } from "../utils/dateTimeUtil"
 import Link from "next/link";
 
 import { Text, Flex, Link as ChakraLink } from "@chakra-ui/react";
 
 export const EventCard = ({ event }) => {
-  let formattedDateTime = new Date(event["start_date"] + "T" + event["start_time"] + "Z")
-  let endDateTime = new Date(event["start_date"] + "T" + event["end_time"] + "Z")
+  let startDateTime = getUTCTimeString(event["start_date"], event["start_time"])
+  let endDateTime = getUTCTimeString(event["start_date"], event["end_time"])
 
-  let month = format(formattedDateTime, "MMM");
-  let date = format(formattedDateTime, "d");
-  let startTime = getAMPMTime(formattedDateTime)
+  let month = format(startDateTime, "MMM");
+  let date = format(startDateTime, "d");
+  let startTime = getAMPMTime(startDateTime)
   let endTime = getAMPMTime(endDateTime)
 
   return (

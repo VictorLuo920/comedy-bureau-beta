@@ -22,5 +22,9 @@ export const getAMPMTime = (date) => {
     minutes = minutes < 10 ? '0'+minutes : minutes;
     var strTime = hours + ':' + minutes + ' ' + ampm;
     return strTime;
-  }
+}
+
+export const getUTCTimeString = (date, time) => {
+    return new Date(date + "T" + time + "Z")
+}
  
