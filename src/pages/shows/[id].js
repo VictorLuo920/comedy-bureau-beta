@@ -27,7 +27,7 @@ export default function Event({ event }) {
       </Text>
       <Badge colorScheme="red">
         {event["cost"] && event["cost"] > 0
-          ? event["cost"]
+          ? "$" + event["cost"]
           : "Free"}
       </Badge>
       <Text whiteSpace="pre-wrap" textStyle="eventDesc">
