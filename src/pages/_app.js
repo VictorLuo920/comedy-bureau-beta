@@ -4,7 +4,8 @@ import { Main } from "../components/Main";
 import { DarkModeSwitch } from "../components/DarkModeSwitch";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-import theme from "../theme";
+import theme from "../styles/theme";
+import '../styles/styles.css'
 
 function MyApp({ Component, pageProps }) {
   return (
