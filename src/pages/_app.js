@@ -5,7 +5,8 @@ import { DarkModeSwitch } from "../components/DarkModeSwitch";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import theme from "../styles/theme";
-import '../styles/styles.css'
+import '../styles/styles.css';
+import '../styles/DatePicker.css';
 
 function MyApp({ Component, pageProps }) {
   return (
