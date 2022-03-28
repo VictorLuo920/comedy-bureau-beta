@@ -12,6 +12,7 @@ import {
   FormLabel,
   Button,
   Menu,
+  Select,
   MenuButton,
   MenuList,
   MenuItem,
@@ -22,7 +23,8 @@ import {
   InputLeftElement,
 } from "@chakra-ui/react";
 import { ChevronDownIcon, PhoneIcon } from '@chakra-ui/icons';
-
+import { DropDownLocSelect, } from '/src/components/DropDownLocSelect.js'
+import { DropDownCatSelect, } from '/src/components/DropDownCatSelect.js'
 
 export const Hero = () => (
   <Box w="100%" px="2rem">
@@ -31,39 +33,20 @@ export const Hero = () => (
     </div>
     <Heading>Find the Funny.</Heading>
     <Text>Discover your next comedy event</Text>
-    <InputGroup w="100%" my={1}>
+    <InputGroup w="100%" my={1} sx={{ p: 2, border: '1px dashed grey', borderRadius: "md",  }} >
       <Flex w="100%" direction="column">
-        <Menu>
-              <MenuButton
-                px={4}
-                py={2}
-                transition='all 0.2s'
-                borderRadius='md'
-                borderWidth='1px'
-                _hover={{ bg: 'gray.400' }}
-                _expanded={{ bg: 'blue.400' }}
-                _focus={{ boxShadow: 'outline' }}
-              >
-                Category <ChevronDownIcon />
-              </MenuButton>
-                <MenuList>
-                  <MenuItem>Stand Up</MenuItem>
-                  <MenuItem>Improv</MenuItem>
-                  <MenuItem>Sketch</MenuItem>
-                  <MenuItem>Screenings/Podcasts/Panels</MenuItem>
-                  <MenuItem>Storytelling/Solo Shows</MenuItem>
-                </MenuList>
-              </Menu>
+              <DropDownCatSelect />
         {/* category here: this search bar needs to fire a function that returns data based on corresponding tags in organization... */}
       </Flex>
       <Flex w="100%" direction="column">
       <DatePicker />
       </Flex>
       <Flex w="100%" direction="column">
-        <FormLabel px="1rem">Location</FormLabel>
-        <Input borderRadius="0px" placeholder="Location" />
+           <DropDownLocSelect />
         {/* This corresponds to a Location field, and should refer to its own table? */}
-        <Button size="xl">Button</Button>
+      </Flex>
+      <Flex w="50%" direction="column">
+      <Button size="xl">Button</Button>
       </Flex>
     </InputGroup>
   </Box>
