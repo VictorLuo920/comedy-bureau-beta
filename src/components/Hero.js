@@ -9,20 +9,21 @@ import {
   Heading,
   Input,
   InputGroup,
-  FormLabel,
   Button,
   Menu,
   MenuButton,
   MenuList,
   MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
-  InputLeftElement,
+  Container,
+  FormControl,
+  FormLabel,
+  Code,
+  FormErrorMessage,
 } from "@chakra-ui/react";
 import { ChevronDownIcon, PhoneIcon } from '@chakra-ui/icons';
-
+import { Select, CreatableSelect, AsyncSelect, className, ClassNamePrefix, makeAnimated } from "chakra-react-select";
+import { categoryOptions, locationOptions, groupedCountries, menuList } from "/docs/data.js";
+import { SlidingMenu } from "./SlidingMenu";
 
 export const Hero = () => (
   <Box w="100%" px="2rem">
@@ -33,33 +34,25 @@ export const Hero = () => (
     <Text>Discover your next comedy event</Text>
     <InputGroup w="100%" my={1}>
       <Flex w="100%" direction="column">
-        <Menu>
-              <MenuButton
-                px={4}
-                py={2}
-                transition='all 0.2s'
-                borderRadius='md'
-                borderWidth='1px'
-                _hover={{ bg: 'gray.400' }}
-                _expanded={{ bg: 'blue.400' }}
-                _focus={{ boxShadow: 'outline' }}
-              >
-                Category <ChevronDownIcon />
-              </MenuButton>
-                <MenuList>
-                  <MenuItem>Stand Up</MenuItem>
-                  <MenuItem>Improv</MenuItem>
-                  <MenuItem>Sketch</MenuItem>
-                  <MenuItem>Screenings/Podcasts/Panels</MenuItem>
-                  <MenuItem>Storytelling/Solo Shows</MenuItem>
-                </MenuList>
-              </Menu>
+      <SlidingMenu />
         {/* category here: this search bar needs to fire a function that returns data based on corresponding tags in organization... */}
       </Flex>
       <Flex w="100%" direction="column">
       <DatePicker />
       </Flex>
       <Flex w="100%" direction="column">
+        <FormControl>
+      <FormLabel>
+        Select a Location
+      </FormLabel>
+      <Select
+        name="Locations"
+        options={locationOptions}
+        placeholder="Select a location..."
+        closeMenuOnSelect={false}
+        size="lg"
+      />
+    </FormControl>
         <FormLabel px="1rem">Location</FormLabel>
         <Input borderRadius="0px" placeholder="Location" />
         {/* This corresponds to a Location field, and should refer to its own table? */}

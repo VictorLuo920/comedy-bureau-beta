@@ -1,1 +1,16 @@
 .jakeimg{position: relative; float: right; }
+#react-select-2-listbox {}
+.menu {
+    animation: fade--in 0.3s ease-in-out;
+  }
+  
+  @keyframes fade--in {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
