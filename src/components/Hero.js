@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React, { useState, useRef, forwardRef,  } from "react";
-import DatePicker from 'react-datepicker'
-import "react-datepicker/dist/react-datepicker.css";
+
 import {
   Box,
   Text,
@@ -23,7 +22,8 @@ import {
 import { ChevronDownIcon, PhoneIcon } from '@chakra-ui/icons';
 import { Select, CreatableSelect, AsyncSelect, className, ClassNamePrefix, makeAnimated } from "chakra-react-select";
 import { categoryOptions, locationOptions, groupedCountries, menuList } from "/docs/data.js";
-import { SlidingMenu } from "./SlidingMenu";
+
+
 
 export const Hero = () => (
   <Box w="100%" px="2rem">
@@ -34,12 +34,28 @@ export const Hero = () => (
     <Text>Discover your next comedy event</Text>
     <InputGroup w="100%" my={1}>
       <Flex w="100%" direction="column">
-      <SlidingMenu />
+      <FormControl>
+      <FormLabel>
+        Select a Category
+      </FormLabel>
+      <Select
+        name="Categories"
+        isMulti
+        options={categoryOptions}
+        placeholder="Select a category..."
+        closeMenuOnSelect={false}
+        //menuIsOpen
+        size="lg"
+      />
+    </FormControl>
         {/* category here: this search bar needs to fire a function that returns data based on corresponding tags in organization... */}
       </Flex>
+
+{/* Start of date picker here */}
       <Flex w="100%" direction="column">
-      <DatePicker />
+      
       </Flex>
+
       <Flex w="100%" direction="column">
         <FormControl>
       <FormLabel>
