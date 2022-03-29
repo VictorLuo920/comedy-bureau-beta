@@ -24,7 +24,6 @@ import { Select, CreatableSelect, AsyncSelect, className, ClassNamePrefix, makeA
 import { categoryOptions, locationOptions, groupedCountries, menuList } from "/docs/data.js";
 
 
-
 export const Hero = () => (
   <Box w="100%" px="2rem">
     <div className="jakeimg">
