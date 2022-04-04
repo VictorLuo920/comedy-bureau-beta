@@ -59,7 +59,7 @@ export const Hero = () => (
     </div>
     <Heading fontSize={'5xl'}>Find the Funny.</Heading>
     <Text fontSize={'x-large'}>Discover your next comedy event</Text>
-    <InputGroup w="90%" my={1} border="1px" borderColor="ActiveCaption" borderRadius={'lg'}>
+    <InputGroup w="90%" height={79} my={1} border="1px" borderColor="ActiveCaption" borderRadius={'lg'} p={0}>
       <Flex w="100%" direction="column">
       <FormControl className="dividerLine" borderColor="ActiveCaption">
       <FormLabel>
@@ -67,10 +67,12 @@ export const Hero = () => (
       </FormLabel>
       <Select
         name="Categories"
+        borderColor="none"
+        focusBorderColor="none"
         isMulti
         options={categoryOptions}
         placeholder="Select a category"
-        closeMenuOnSelect={false}
+        closeMenuOnSelect={true}
         //menuIsOpen
         size="sm"
         className="catDropDownInput"
@@ -95,12 +97,14 @@ export const Hero = () => (
         Location
       </FormLabel>
       <Select
+        borderColor="none"
         focusBorderColor="none"
         name="Locations"
         options={locationOptions}
         placeholder="Select your location"
-        closeMenuOnSelect={false}
+        closeMenuOnSelect={true}
         size="sm"
+        //menuIsOpen
       />
     </FormControl>
         {/* This corresponds to a Location field, and should refer to its own table? */}
@@ -120,7 +124,7 @@ export const Hero = () => (
           }}
       >
   Search
-</Box>
+      </Box>
       </FormLabel>
     </FormControl>
       </Flex>
