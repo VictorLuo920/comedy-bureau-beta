@@ -2,34 +2,75 @@
 
 /*-- This is DatePicker --- */
 
-.DatePickerInput{
+.DatePickerInput {
+  background: var(--chakra-colors-gray-50);
+  color: var(--chakra-colors-gray-400);
+  -webkit-margin-start: 0.125rem;
+  margin-inline-start: 0.125rem;
+  -webkit-margin-end: 0.125rem;
+  margin-inline-end: 0.125rem;
+  position: absolute;
+  top: 0;
+  transform: translateY(-65%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.catDropDownInput{
   background: var(--chakra-colors-gray-50);
 }
 
-/*-- DropDown Styling --- */
-.css-o38mw0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding: 0;
-  -webkit-box-flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-overflow-scrolling: touch;
+.dividerLine {
   position: relative;
-  overflow: hidden;
 }
+
+.dividerLine::after {
+  content: '';
+  height: 60%;
+  width: 1px;
+  position: absolute;
+  right: 0;
+  top: 20%;
+  background-color: var(--chakra-colors-gray-400);
+}
+
+.react-datepicker-popper{width: 140%;}
+/*--- input group ---*/
+
+
+.chakra-form-control{ padding: .7em;}
+
+.css-pk5tju {
+  display: contents !important;}
+
+.css-17jq17h, .css-pk5tju {
+  font-size: var(--chakra-fontSizes-sm) !important;
+  min-height: var(--chakra-sizes-8) !important;}
+
+  .css-2gx1h6, .DatePickerInput {
+    font-size: var(--chakra-fontSizes-sm) !important;
+    margin-bottom: var(--chakra-space-0) !important;
+    font-weight: var(--chakra-fontWeights-light) !important;
+  }
+  .css-17jq17h:focus, .css-17jq17h[data-focus] {
+    z-index: 1;
+    border-color: none !important;
+    box-shadow: 0 0 0 0px !important;
+  }
+  input.DatePickerInput {
+    &:focus{outline: none;}
+    
+  }
+/*-- DropDown Styling --- */
+.css-o38mw0{padding: 0px !important;}
+/*-- DropDown button --*/
+.css-hfbj6y{display: none !important;}
+
+.css-8f4url, .css-2gizue{border: none !important;}
 /*-- This is dropdown --- */
-.css-rg9wio {
+.css-rg9wio, .react-datepicker-popper {
     animation: fade--in 0.3s ease-in-out;
   }
   

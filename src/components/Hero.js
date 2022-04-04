@@ -57,11 +57,11 @@ export const Hero = () => (
     <div className="jakeimg">
           <Image src="/jake.png" width="164px" height="164px" />
     </div>
-    <Heading>Find the Funny.</Heading>
-    <Text>Discover your next comedy event</Text>
-    <InputGroup w="100%" my={1}>
+    <Heading fontSize={'5xl'}>Find the Funny.</Heading>
+    <Text fontSize={'x-large'}>Discover your next comedy event</Text>
+    <InputGroup w="90%" my={1} border="1px" borderColor="ActiveCaption" borderRadius={'lg'}>
       <Flex w="100%" direction="column">
-      <FormControl>
+      <FormControl className="dividerLine" borderColor="ActiveCaption">
       <FormLabel>
         Category
       </FormLabel>
@@ -72,7 +72,8 @@ export const Hero = () => (
         placeholder="Select a category"
         closeMenuOnSelect={false}
         //menuIsOpen
-        size="lg"
+        size="sm"
+        className="catDropDownInput"
       />
     </FormControl>
         {/* category here: this search bar needs to fire a function that returns data based on corresponding tags in organization... */}
@@ -80,27 +81,48 @@ export const Hero = () => (
 
 {/* Start of date picker here */}
       <Flex w="100%" direction="column">
-      <FormLabel>
+        <FormControl className="dividerLine" borderColor="ActiveCaption">
+      <FormLabel fontSize={'sm'}>
         Your Date
       </FormLabel>
        <TableDatePicker />
+       </FormControl>
       </Flex>
 
       <Flex w="100%" direction="column">
-        <FormControl>
+        <FormControl borderColor="ActiveCaption">
       <FormLabel>
         Location
       </FormLabel>
       <Select
+        focusBorderColor="none"
         name="Locations"
         options={locationOptions}
         placeholder="Select your location"
         closeMenuOnSelect={false}
-        size="lg"
+        size="sm"
       />
     </FormControl>
         {/* This corresponds to a Location field, and should refer to its own table? */}
-        <Button size="xl">Button</Button>
+      </Flex>
+      <Flex direction="column">
+        <FormControl borderColor="ActiveCaption">
+      <FormLabel textAlign={'left'}>
+      <Box
+          as='button'
+          p={4}
+          color='white'
+          fontWeight='bold'
+          borderRadius='md'
+          bgGradient='linear(to-l, gray.900, red.500)'
+          _hover={{
+            bgGradient: 'linear(to-r, red.500, yellow.500)'
+          }}
+      >
+  Search
+</Box>
+      </FormLabel>
+    </FormControl>
       </Flex>
     </InputGroup>
   </Box>
