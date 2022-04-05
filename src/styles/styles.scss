@@ -1,0 +1,89 @@
+.jakeimg {
+  position: absolute;
+  float: right;
+  right: 0;
+}
+/*-- This is DatePicker --- */
+
+.DatePickerInput {
+  background: var(--chakra-colors-gray-50);
+  color: var(--chakra-colors-gray-400);
+  -webkit-margin-start: 0.125rem;
+  margin-inline-start: 0.125rem;
+  -webkit-margin-end: 0.125rem;
+  margin-inline-end: 0.125rem;
+  position: absolute;
+  top: 0;
+  transform: translateY(-65%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.catDropDownInput{
+  background: var(--chakra-colors-gray-50);
+}
+
+.dividerLine {
+  position: relative;
+}
+
+.dividerLine::after {
+  content: '';
+  height: 60%;
+  width: 1px;
+  position: absolute;
+  right: 0;
+  top: 20%;
+  background-color: var(--chakra-colors-gray-400);
+}
+
+.react-datepicker-popper{width: 140%;}
+/*--- input group ---*/
+
+
+.chakra-form-control{ padding: .7em;}
+
+.css-pk5tju {
+  display: contents !important;}
+
+.css-17jq17h, .css-pk5tju {
+  font-size: var(--chakra-fontSizes-sm) !important;
+  min-height: var(--chakra-sizes-8) !important;}
+
+  .css-2gx1h6, .DatePickerInput {
+    font-size: var(--chakra-fontSizes-sm) !important;
+    margin-bottom: var(--chakra-space-0) !important;
+    font-weight: var(--chakra-fontWeights-light) !important;
+  }
+  .css-17jq17h:focus, .css-17jq17h[data-focus] {
+    z-index: 1;
+    border-color: none !important;
+    box-shadow: 0 0 0 0px !important;
+  }
+  input.DatePickerInput {
+    &:focus{outline: none;}
+    
+  }
+/*-- DropDown Styling --- */
+.css-o38mw0, .css-hetjj7{padding: 0px !important;}
+/*-- DropDown button --*/
+.css-hfbj6y{display: none !important;}
+
+.css-8f4url, .css-2gizue {border: none !important;}
+/*-- This is dropdown --- */
+#react-select-2-listbox, #react-select-3-listbox {
+    animation: fade--in 0.3s ease-in-out;
+  }
+  
+  @keyframes fade--in {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  

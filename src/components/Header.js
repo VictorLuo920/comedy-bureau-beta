@@ -3,6 +3,8 @@ import Image from "next/image";
 
 import { useState } from 'react';
 import { Flex, Box, Text, Link as ChakraLink } from '@chakra-ui/react';
+import { Input, InputGroup, Stack, InputLeftElement, InputRightElement } from '@chakra-ui/react'
+import { CheckIcon, PhoneIcon, Search2Icon } from '@chakra-ui/icons';
 
 
 //make this easy; mobile responsive from the figma design, floats on top? 
@@ -40,11 +42,16 @@ export const Header = (props) => {
         {show ? <Text>Close</Text> : <Text>Open</Text>}
       </Box>
 
-      <Box
-        display={{ base: show ? 'block' : 'none', md: 'block' }}
-        flexBasis={{ base: '100%', md: 'auto' }}
-      >
+      <Box>
+        <InputGroup float={'left'}  width={'80'} marginRight={'10'}>
+                <InputRightElement
+                  pointerEvents='none'
+                  children={<Search2Icon color='gray.300' />}
+                />
+                  <Input type='tel' placeholder='Search' />
+              </InputGroup>
         <Flex
+          marginTop={'2'}
           align="center"
           justify={['center', 'space-between', 'flex-end', 'flex-end']}
           direction={['column', 'row', 'row', 'row']}
