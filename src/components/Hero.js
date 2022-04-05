@@ -35,7 +35,7 @@ export default function TableDatePicker() {
   );
   return (
     <DatePicker
-      calendarClassName="rasta-stripes"
+      calendarClassName="tcb-date-class"
       className="DatePickerInput"
       placeholderText="Add a date and time"
       selected={startDate}
@@ -53,13 +53,13 @@ export default function TableDatePicker() {
  };
 
 export const Hero = () => (
-  <Box w="100%" px="2rem">
+  <Box w="100%" px="2rem" paddingBottom={'90'} position={'relative'}>
     <div className="jakeimg">
-          <Image src="/jake.png" width="164px" height="164px" />
+          <Image src="/jake.png" width="256" height="294" />
     </div>
     <Heading fontSize={'5xl'}>Find the Funny.</Heading>
-    <Text fontSize={'x-large'}>Discover your next comedy event</Text>
-    <InputGroup w="90%" height={79} my={1} border="1px" borderColor="ActiveCaption" borderRadius={'lg'} p={0}>
+    <Text paddingY={'5'} fontSize={'x-large'}>Discover your next comedy event</Text>
+    <InputGroup w="90%" height={79} my={1} border="1px" borderColor="ActiveCaption" borderRadius={'lg'} p={0} backgroundColor={'gray.50'}>
       <Flex w="100%" direction="column">
       <FormControl className="dividerLine" borderColor="ActiveCaption">
       <FormLabel>

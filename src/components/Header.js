@@ -3,6 +3,8 @@ import Image from "next/image";
 
 import { useState } from 'react';
 import { Flex, Box, Text, Link as ChakraLink } from '@chakra-ui/react';
+import { Input, InputGroup, Stack, InputLeftElement, InputRightElement } from '@chakra-ui/react'
+import { CheckIcon, PhoneIcon, Search2Icon } from '@chakra-ui/icons';
 
 
 //make this easy; mobile responsive from the figma design, floats on top? 
@@ -50,6 +52,15 @@ export const Header = (props) => {
           direction={['column', 'row', 'row', 'row']}
           pt={[4, 4, 0, 0]}
         >
+          <MenuItem to="/">
+              <InputGroup>
+                <InputRightElement
+                  pointerEvents='none'
+                  children={<Search2Icon color='gray.300' />}
+                />
+                  <Input type='tel' placeholder='Search' />
+              </InputGroup>
+          </MenuItem>
           <MenuItem to="/">Open Mics</MenuItem>
           <MenuItem to="/podcasts">Comedy Shows</MenuItem>
           <MenuItem to="/playlists">Venues</MenuItem>
