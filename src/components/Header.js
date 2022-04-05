@@ -42,25 +42,21 @@ export const Header = (props) => {
         {show ? <Text>Close</Text> : <Text>Open</Text>}
       </Box>
 
-      <Box
-        display={{ base: show ? 'block' : 'none', md: 'block' }}
-        flexBasis={{ base: '100%', md: 'auto' }}
-      >
-        <Flex
-          align="center"
-          justify={['center', 'space-between', 'flex-end', 'flex-end']}
-          direction={['column', 'row', 'row', 'row']}
-          pt={[4, 4, 0, 0]}
-        >
-          <MenuItem to="/">
-              <InputGroup>
+      <Box>
+        <InputGroup float={'left'}  width={'80'} marginRight={'10'}>
                 <InputRightElement
                   pointerEvents='none'
                   children={<Search2Icon color='gray.300' />}
                 />
                   <Input type='tel' placeholder='Search' />
               </InputGroup>
-          </MenuItem>
+        <Flex
+          marginTop={'2'}
+          align="center"
+          justify={['center', 'space-between', 'flex-end', 'flex-end']}
+          direction={['column', 'row', 'row', 'row']}
+          pt={[4, 4, 0, 0]}
+        >
           <MenuItem to="/">Open Mics</MenuItem>
           <MenuItem to="/podcasts">Comedy Shows</MenuItem>
           <MenuItem to="/playlists">Venues</MenuItem>
