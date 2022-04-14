@@ -5,6 +5,7 @@ import { supabase } from "../utils/supabaseClient";
 import { getOccurrences } from "../utils/dateTimeUtil";
 import { useState, useEffect } from "react";
 import { format } from "date-fns";
+import Pagination from '@etchteam/next-pagination'
 
 export async function getStaticProps() {
   let { data, error } = await supabase.from("open_mics").select("*");
@@ -45,6 +46,7 @@ export default function Shows({ data }) {
           <EventCard event={event} key={i} />
         ))}
       </SimpleGrid>
+    <Pagination total={1000} />  
     </>
   );
 }
