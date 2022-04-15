@@ -5,11 +5,12 @@ import { supabase } from "../utils/supabaseClient";
 import { getOccurrences } from "../utils/dateTimeUtil";
 import { useState, useEffect } from "react";
 import { format } from "date-fns";
+import { useRouter } from 'next/router'
 import Pagination from '@etchteam/next-pagination'
 
 export async function getStaticProps() {
   let { data, error } = await supabase.from("open_mics").select("*");
-
+ 
   return {
     props: { data },
   };
@@ -17,6 +18,10 @@ export async function getStaticProps() {
 
 export default function Shows({ data }) {
   let [openMics, setOpenMics] = useState([]);
+
+  const router = useRouter()
+
+  console.log(router.query) // okay, this works, query object gets console.logged with every route force change on the front end...
 
   useEffect(() => {
     let initialState = [];
@@ -46,7 +51,7 @@ export default function Shows({ data }) {
           <EventCard event={event} key={i} />
         ))}
       </SimpleGrid>
-    <Pagination total={1000} />  
+      <Pagination total={1000} />  
     </>
   );
 }
