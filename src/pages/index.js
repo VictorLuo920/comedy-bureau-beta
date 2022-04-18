@@ -42,13 +42,15 @@ export default function Shows({ computedData }) {
 
     let slice =
       page <= 1
-        ? computedData.slice(0, size + 1)
-        : computedData.slice((page - 1) * size + 1, page * size + 1);
+        ? computedData.slice(0, parseInt(size) + 1)
+        : computedData.slice(
+            (parseInt(page) - 1) * parseInt(size) + 1,
+            parseInt(page) * parseInt(size) + 1
+          );
 
-    setOpenMics(slice)
+    setOpenMics(slice);
   }, [router.query]);
 
- 
   return (
     <>
       <Hero />
