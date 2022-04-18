@@ -40,13 +40,10 @@ export default function Shows({ computedData }) {
   useEffect(() => {
     let { page = 1, size = 20 } = router.query;
 
-    let slice =
-      page <= 1
-        ? computedData.slice(0, parseInt(size))
-        : computedData.slice(
-            (parseInt(page) - 1) * parseInt(size) + 1,
-            parseInt(page) * parseInt(size) + 1
-          );
+    let slice = computedData.slice(
+      (parseInt(page) - 1) * parseInt(size),
+      parseInt(page) * parseInt(size)
+    );
 
     setOpenMics(slice);
   }, [router.query]);
