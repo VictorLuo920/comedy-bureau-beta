@@ -42,7 +42,7 @@ export default function Shows({ computedData }) {
 
     let slice =
       page <= 1
-        ? computedData.slice(0, parseInt(size) + 1)
+        ? computedData.slice(0, parseInt(size))
         : computedData.slice(
             (parseInt(page) - 1) * parseInt(size) + 1,
             parseInt(page) * parseInt(size) + 1
