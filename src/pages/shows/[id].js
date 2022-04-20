@@ -15,7 +15,7 @@ export default function Event({ event }) {
 
   return (
     <Box m={2} p={8} borderWidth="1px" minWidth="100%">
-      <Text textStyle="eventName" borderBottomWidth="1px">
+      <Text fontSize={'4xl'} textStyle="eventName" borderBottomWidth="1px">
         {event["name"]}
       </Text>
 
