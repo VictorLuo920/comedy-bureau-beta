@@ -35,7 +35,9 @@ export async function getStaticProps() {
 
 export default function Shows({ computedData }) {
   let [openMics, setOpenMics] = useState([]);
+  let [filters, setFilters] = useState({});
   const router = useRouter();
+  console.log(filters);
   // okay, this works, query object gets console.logged with every route force change on the front end...
   useEffect(() => {
     let { page = 1, size = 20 } = router.query;
@@ -48,9 +50,17 @@ export default function Shows({ computedData }) {
     setOpenMics(slice);
   }, [router.query]);
 
+  function getFilters(category, date, location) {
+    setFilters({
+      category: category,
+      date: date,
+      location: location,
+    });
+  }
+
   return (
     <>
-      <Hero />
+      <Hero getFilters={getFilters} />
       <SimpleGrid columns={{ sm: 1, lg: 4 }} spacing={5}>
         {openMics.map((event, i) => (
           <EventCard event={event} key={i} />
