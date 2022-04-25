@@ -37,7 +37,7 @@ export default function Shows({ computedData }) {
   let [openMics, setOpenMics] = useState([]);
   let [filters, setFilters] = useState({});
   const router = useRouter();
-  console.log(filters);
+  // console.log(filters);
   // okay, this works, query object gets console.logged with every route force change on the front end...
   useEffect(() => {
     let { page = 1, size = 20 } = router.query;
@@ -49,6 +49,13 @@ export default function Shows({ computedData }) {
 
     setOpenMics(slice);
   }, [router.query]);
+
+  useEffect(() => {
+    let filteredData = computedData.filter((event) => {
+      return new Date(event["start_date"]) >= new Date(filters.date)
+    })
+    console.log(filteredData[0])
+  }, [filters])
 
   function getFilters(category, date, location) {
     setFilters({
