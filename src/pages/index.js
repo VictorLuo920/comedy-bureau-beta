@@ -2,7 +2,7 @@ import { EventCard } from "../components/EventCard";
 import { Hero } from "../components/Hero";
 import { SimpleGrid } from "@chakra-ui/react";
 import { supabase } from "../utils/supabaseClient";
-import { getOccurrences } from "../utils/dateTimeUtil";
+import { getOccurrences, getDateTimeString } from "../utils/dateTimeUtil";
 import { useState, useEffect } from "react";
 import { format } from "date-fns";
 import { useRouter } from "next/router";
@@ -52,10 +52,18 @@ export default function Shows({ computedData }) {
 
   useEffect(() => {
     let filteredData = computedData.filter((event) => {
-      return new Date(event["start_date"]) >= new Date(filters.date)
-    })
-    console.log(filteredData[0])
-  }, [filters])
+      let startDate = getDateTimeString(event["start_date"], event["start_time"]);
+      let filterDate = new Date(filters.date);
+  
+      return (
+        (startDate.getDate() === filterDate.getDate() &&
+          startDate.getMonth() === filterDate.getMonth() &&
+          startDate.getFullYear() === filterDate.getFullYear()) ||
+        startDate > filterDate
+      );
+    });
+    console.log(filteredData[0]);
+  }, [filters]);
 
   function getFilters(category, date, location) {
     setFilters({
