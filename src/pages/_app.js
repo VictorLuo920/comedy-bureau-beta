@@ -6,7 +6,7 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import theme from "../styles/theme";
 import '../styles/styles.scss';
-
+import '@etchteam/next-pagination/dist/index.css'
 
 function MyApp({ Component, pageProps }) {
   return (
