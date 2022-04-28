@@ -11,7 +11,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 
-//The Card component needs to follow a basic 3/4 ratio of an image box... with the floaty text image.
+//The Card component needs to follow a basic 3/4 ratio of an image box... with teh floaty text image.
 export const Card = ({ event }) => {
   const { isOpen, onToggle } = useDisclosure();
 

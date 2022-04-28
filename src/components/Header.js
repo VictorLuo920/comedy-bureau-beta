@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from 'react';
 import { Flex, Box, Text, Link as ChakraLink } from '@chakra-ui/react';
 import { Input, InputGroup, Stack, InputLeftElement, InputRightElement } from '@chakra-ui/react'
-import { Search2Icon } from '@chakra-ui/icons';
+import { CheckIcon, PhoneIcon, Search2Icon } from '@chakra-ui/icons';
 
 
 //make this easy; mobile responsive from the figma design, floats on top? 
@@ -48,7 +48,7 @@ export const Header = (props) => {
                   pointerEvents='none'
                   children={<Search2Icon color='gray.300' />}
                 />
-                  <Input type='search' placeholder='Search' handleChange={(e) => console.log(e)} />
+                  <Input type='tel' placeholder='Search' />
               </InputGroup>
         <Flex
           marginTop={'2'}
