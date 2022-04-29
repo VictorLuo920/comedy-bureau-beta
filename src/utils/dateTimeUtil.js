@@ -8,9 +8,10 @@ export const getOccurrences = (recurrence) => {
   let nextYear = new Date(today);
   nextYear.setFullYear(nextYear.getFullYear() + 1); //need to invoke function to add year
   //get array of dates between now and "cut off" limit: 6 months?
-  let occurences = rule.between(today, nextYear);
+  let occurrences = rule.between(today, nextYear);
   //return that array of dates
-  return occurences;
+  console.log(occurrences)
+  return occurrences;
 };
 
 export const getAMPMTime = (date) => {

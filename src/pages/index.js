@@ -25,7 +25,7 @@ export async function getStaticProps() {
     }
   });
   computedData.sort((evt1, evt2) => {
-    return new Date(evt1["start_date"]) - new Date(evt2["start_date"]);
+    return getDateTimeString(evt1["start_date"], evt1["start_time"]) - getDateTimeString(evt2["start_date"], evt2["start_time"]);
   });
 
   return {
@@ -37,8 +37,7 @@ export default function Shows({ computedData }) {
   let [openMics, setOpenMics] = useState([]);
   let [filters, setFilters] = useState({});
   const router = useRouter();
-  // console.log(filters);
-  // okay, this works, query object gets console.logged with every route force change on the front end...
+
   useEffect(() => {
     let { page = 1, size = 20 } = router.query;
 
