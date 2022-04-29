@@ -3,12 +3,14 @@ import { RRule } from "rrule";
 export const getOccurrences = (recurrence) => {
   //create the rule from text
   let rule = RRule.fromText(recurrence);
-  //get today and nextYear's dates
+  //get range of yesterday and nextYear's dates, need yesterday to work with RRule's UTC weirdness, to include "today's" range
   let today = new Date();
+  let yesterday = new Date(today) 
   let nextYear = new Date(today);
-  nextYear.setFullYear(nextYear.getFullYear() + 1); //need to invoke function to add year
+  yesterday.setDate(yesterday.getDate() - 1)
+  nextYear.setFullYear(nextYear.getFullYear() + 1)
   //get array of dates between now and "cut off" limit: 6 months?
-  let occurrences = rule.between(today, nextYear);
+  let occurrences = rule.between(yesterday, nextYear);
   //return that array of dates
   console.log(occurrences)
   return occurrences;
